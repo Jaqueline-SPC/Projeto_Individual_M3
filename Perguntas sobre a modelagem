@@ -1,0 +1,90 @@
+Perguntas sobre esta modelagem:
+
+
+
+1.	Quais são as entidades necessárias? 
+
+     Empresa Parceira, Tecnologia, Área, Relação, Empresa - Tec. e Colaborador.
+
+2.	Quais são os principais campos e seus respectivos tipos? 
+
+Empresa Parceira :
+ID: identificador único 
+Nome: nome da empresa 
+Endereço: endereço da empresa 
+Outros campos relevantes, como telefone, e-mail, etc.
+
+Tecnologia :
+ID: identificador único  
+Nome: nome da tecnologia 
+Outros campos relevantes, como descrição, versão, etc.
+
+Área :
+ID: identificador único 
+Nome: nome da área 
+Outros campos relevantes, como descrição, etc.
+
+Relação Empresa - Tec. :
+ID da relação: ID identificador da relação 
+ID da Empresa: ID da empresa parceira 
+ID da Tecnologia: ID da tecnologia utilizada 
+Outros campos relevantes, se necessário.
+
+Colaborador :
+ID: identificador único 
+Nome: nome do colaborador 
+Cargo: cargo do colaborador 
+ID da Empresa: ID da empresa em que o colaborador trabalha 
+Outros campos relevantes, como telefone, e-mail, etc.
+
+3.	Como essas entidades estão relacionadas? 
+
+Uma Empresa parceira pode ter várias Tecnologias associadas a ela.
+Um Colaborador está vinculado a uma única Empresa parceira.
+A tabela de relação entre Empresa parceira e Tecnologia permite registrar quais tecnologias uma empresa está utilizando.
+
+
+
+
+4.	Simule 2 registros para cada entidade.
+
+Empresa parceira:
+ID	Nome	Endereço	Telefone	Email
+1	Empresa A	Endereço A	123456789	empresaA@example.com
+
+2	Empresa B	Endereço B	987654321	empresaB@example.com
+
+
+Tecnologia:
+ID	Nome	Área
+1	Tecnologia A	Web Dev
+2	Tecnologia B	Dados
+
+Relação entre Empresa parceira e Tecnologia:
+ID	ID da Empresa parceira	ID da Tecnologia
+1	1	1
+2	1	2
+3	2	1
+
+Colaborador:
+ID	Nome	Cargo	ID da Empresa parceira
+1	Colaborador A	Desenvolvedor	1
+2	Colaborador B	Analista	2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
