@@ -9,41 +9,38 @@ Perguntas sobre esta modelagem:
 2.	Quais são os principais campos e seus respectivos tipos? 
 
 Empresa Parceira :
-ID: identificador único 
-Nome: nome da empresa 
-Endereço: endereço da empresa 
-Outros campos relevantes, como telefone, e-mail, etc.
+ID (Int) - Identificador único da empresa parceira
+Nome (Varchar) - Nome da empresa
+Endereço (Varchar) - Endereço da empresa
+Telefone (Varchar) - Número de telefone da empresa
 
 Tecnologia :
-ID: identificador único  
-Nome: nome da tecnologia 
-Outros campos relevantes, como descrição, versão, etc.
+ID (Int) - Identificador único da tecnologia
+Nome (Varchar) - Nome da tecnologia
+Área (Varchar) - Área da tecnologia.
 
 Área :
-ID: identificador único 
-Nome: nome da área 
-Outros campos relevantes, como descrição, etc.
+ID (Int) - Identificador único da área
+Nome (Varchar) - Nome da área
 
 Relação Empresa - Tec. :
-ID da relação: ID identificador da relação 
-ID da Empresa: ID da empresa parceira 
-ID da Tecnologia: ID da tecnologia utilizada 
-Outros campos relevantes, se necessário.
+ID da relação (Int) - Identificador único da relação
+ID da Empresa (Int) - Chave estrangeira referenciando a Empresa Parceira associada
+ID da Tecnologia (Int) - Chave estrangeira referenciando a Tecnologia associada
 
 Colaborador :
-ID: identificador único 
-Nome: nome do colaborador 
-Cargo: cargo do colaborador 
-ID da Empresa: ID da empresa em que o colaborador trabalha 
-Outros campos relevantes, como telefone, e-mail, etc.
+ID (Int) - Identificador único do colaborador
+Nome (Varchar) - Nome do colaborador
+Cargo (Varchar) - Cargo do colaborador
+ID da Empresa (Int) - Chave estrangeira referenciando a Empresa Parceira em que o colaborador trabalha
 
 3.	Como essas entidades estão relacionadas? 
 
-Uma Empresa parceira pode ter várias Tecnologias associadas a ela.
-Um Colaborador está vinculado a uma única Empresa parceira.
-A tabela de relação entre Empresa parceira e Tecnologia permite registrar quais tecnologias uma empresa está utilizando.
-
-
+A entidade "Empresa Parceira" tem uma relação de 1:n com a entidade "Relação Empresa-Tec." (uma empresa pode ter várias relações com tecnologias).
+A entidade "Tecnologia" tem uma relação de 1:n com a entidade "Relação Empresa-Tec." (uma tecnologia pode ser utilizada por várias empresas).
+A entidade "Área" não possui relacionamentos diretos com as outras entidades.
+A entidade "Colaborador" tem uma relação de 1:n com a entidade "Empresa Parceira" (um colaborador trabalha em uma única empresa).
+A entidade "Relação Empresa-Tec." tem relacionamentos 1:1 com as entidades "Empresa Parceira" e "Tecnologia" (cada relação é específica para uma empresa e uma tecnologia).
 
 
 4.	Simule 2 registros para cada entidade.
